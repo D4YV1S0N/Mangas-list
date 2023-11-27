@@ -1,0 +1,76 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mangás manager</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        border: 1px solid black;
+        padding: 5px;
+        background-color: green;
+        text-align: center;
+      }
+      .header h1{
+        color: purple;
+        font-size: 18pt;
+        text-shadow: 1px 1px 1px black;
+      }
+      .header ul {
+          margin-top: 5px;
+      }
+      .header ul li {
+          display: inline;
+          font-size: 14pt;
+          margin: 0px 20px;
+          list-style: none;
+      }
+      .header ul li a {
+          text-decoration: none;
+          color: black;
+      }
+      .body h2 {
+          margin: 10px 10px;
+      }
+      .list-manga {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          border: 1px solid black;
+          margin: 0 10px;
+      }
+      .list-manga img {
+          border: 1px solid black;
+          margin: 5px;
+          text-align: center;
+      }
+      .list-manga li {
+          margin: 10px 10px;
+          padding-left: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+          max-width:150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Mangás Manager</h1>
+      <ul>
+          <li><a href="/mangas">Home</a></li>
+          <li><a href="#">Add</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="">User</a></li>
+      </ul>
+    </div>
+    <div class="body">
+        <h2>Mangás:</h2>
+        <ul class="list-manga">
+            {% for manga in manga_name %}
+            <li><img src="" alt="Manga-image">{{ manga.manga_name }}<br> cap.: {{ manga.manga_cap }}<br> Status: {{ manga.manga_status }}</li>
+            {% endfor %}
+    </div>
+  </body>
+</html>
